@@ -23,6 +23,7 @@ public class LogUtils {
     private static final int LOG_PREFIX_LENGTH = LOG_PREFIX.length();
     private static final int MAX_LOG_TAG_LENGTH = 23;
 
+    //为true时可以打印log
     public static boolean LOGGING_ENABLED = true;
 
     public static String makeLogTag(String str) {

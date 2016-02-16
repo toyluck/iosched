@@ -40,7 +40,9 @@ import static com.google.samples.apps.iosched.util.LogUtils.makeLogTag;
 
 /**
  * Terms of Service activity activated via
+ *
  * {@link com.google.samples.apps.iosched.core.activities.BaseActivity} functionality.
+ * 多个fragment 展示不同的条款
  */
 public class WelcomeActivity extends AppCompatActivity implements WelcomeFragment.WelcomeFragmentContainer {
     private static final String TAG = makeLogTag(WelcomeActivity.class);
@@ -108,7 +110,7 @@ public class WelcomeActivity extends AppCompatActivity implements WelcomeFragmen
      * @return the WelcomeActivityContent to display or null if there's none.
      */
     private static WelcomeActivityContent getCurrentFragment(Context context) {
-        List<WelcomeActivityContent> welcomeActivityContents = getWelcomeFragments();
+         List<WelcomeActivityContent> welcomeActivityContents = getWelcomeFragments();
 
         for (WelcomeActivityContent fragment : welcomeActivityContents) {
             if (fragment.shouldDisplay(context)) {

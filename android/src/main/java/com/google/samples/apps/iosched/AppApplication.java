@@ -44,6 +44,7 @@ public class AppApplication extends Application {
         AnalyticsHelper.prepareAnalytics(getApplicationContext());
         SettingsUtils.markDeclinedWifiSetup(getApplicationContext(), false);
 
+        // 和Google Play 联动 获取
         // Ensure an updated security provider is installed into the system when a new one is
         // available via Google Play services.
         try {
