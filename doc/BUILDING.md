@@ -57,7 +57,7 @@ To build the app:
 1. Import the project in Android Studio:
 
     1. Press File > Import Project
-    1. Navigate to and choose the settings.gradle file in this project
+    1. Navigate to and choose the settings.gradle file in this project--in
     1. Press OK
 
 1. Add your debug keystore to the project (save it as android/debug.keystore),
