@@ -567,10 +567,10 @@ public final class ScheduleContract {
      * Each session has zero or more {@link Tags}, a {@link Rooms},
      * zero or more {@link Speakers}.
      */
-    public static class Sessions implements SessionsColumns, RoomsColumns,
+    public static class Sessions implements  SessionsColumns, RoomsColumns,
             SyncColumns, BaseColumns {
 
-        public static final String QUERY_PARAMETER_TAG_FILTER = "filter";
+        public static final String  QUERY_PARAMETER_TAG_FILTER = "filter";
         public static final String QUERY_PARAMETER_CATEGORIES = "categories";
 
         public static final Uri CONTENT_URI =
@@ -978,6 +978,7 @@ public final class ScheduleContract {
 
         public static final String CONTENT_TYPE_ID = "search_topics_sessions";
 
+        //查找主题  uri 地址
         public static final Uri CONTENT_URI =
                 BASE_CONTENT_URI.buildUpon().appendPath(PATH_SEARCH_TOPICS_SESSIONS).build();
 

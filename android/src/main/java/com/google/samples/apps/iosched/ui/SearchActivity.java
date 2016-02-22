@@ -20,6 +20,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.LoaderManager;
 import android.app.SearchManager;
+import android.content.BroadcastReceiver;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
@@ -284,8 +285,18 @@ public class SearchActivity extends BaseActivity implements
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * 当initLoader 被调用时 执行本方法
+     * @param id
+     * @param args
+     * @return
+     */
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        //CursorLoader 继承自AsyncTaskLoader
+        /**
+         *
+         */
         return new CursorLoader(this,
                 ScheduleContract.SearchTopicsSessions.CONTENT_URI,
                 SearchTopicsSessionsQuery.PROJECTION,
@@ -322,6 +333,7 @@ public class SearchActivity extends BaseActivity implements
 
     private interface SearchTopicsSessionsQuery {
         int TOKEN = 0x4;
+        //todo 深究 sqlite 的使用
         String[] PROJECTION = ScheduleContract.SearchTopicsSessions.DEFAULT_PROJECTION;
 
         int _ID = 0;

@@ -195,7 +195,7 @@ public class ScheduleProvider extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs,
                         String sortOrder) {
-        final SQLiteDatabase db = mOpenHelper.getReadableDatabase();
+         final SQLiteDatabase db = mOpenHelper.getReadableDatabase();
 
         String tagsFilter = uri.getQueryParameter(Sessions.QUERY_PARAMETER_TAG_FILTER);
         String categories = uri.getQueryParameter(Sessions.QUERY_PARAMETER_CATEGORIES);
