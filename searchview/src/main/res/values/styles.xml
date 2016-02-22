@@ -1,0 +1,129 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+    <style name="SearchViewTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@color/app_body_text_1</item>
+        <item name="colorControlNormal">@color/app_body_text_2</item>
+        <item name="colorControlActivated">@color/theme_accent_1</item>
+    </style>
+
+
+    <style name="Theme.IOSched.Search" parent="Theme.IOSched">
+        <!--设置window 的背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--设置 window 背景半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+
+        <item name="autoCompleteTextViewStyle">@style/Widget.IOSched.Search.AutoCompleteTextView</item>
+        <item name="searchViewStyle">@style/Widget.IOSched.SearchView</item>
+        <item name="colorControlNormal">@color/app_body_text_2</item>
+        <item name="colorControlActivated">@color/theme_accent_1</item>
+    </style>
+
+    <!--设置 自动完善textView的 提示字体颜色 和 CursorDrawable-->
+    <style name="Widget.IOSched.Search.AutoCompleteTextView" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+        <item name="android:textColorHint">@color/app_body_text_2</item>
+        <!-- If set to @null the cursor will be displayed using android:textColor -->
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+
+    <!--SearchView 的 style 继承自 现有的SearchView style .将属性设置为空-->
+    <style name="Widget.IOSched.SearchView" parent="Widget.AppCompat.SearchView">
+        <item name="searchHintIcon">@null</item>
+        <item name="queryBackground">@null</item>
+        <item name="submitBackground">@null</item>
+    </style>
+
+    <style name="Theme.IOSched" parent="Theme.IOSched.Base" />
+
+
+    <style name="Theme.IOSched.Base" parent="Theme">
+        <!--actionBar 的 icon颜色样式-->
+        <item name="actionBarIconColor">#fff</item>
+        <!--actionBar 的 初始输入位置-->
+        <item name="actionBarInsetStart">@dimen/keyline_2</item>
+        <!--返回键 的 样式-->
+        <item name="homeAsUpIndicator">@drawable/ic_up</item>
+        <!--spinnerBar 的 初始位置-->
+        <item name="spinnerBarInsetStart">@dimen/keyline_2_minus_16dp</item>
+
+        <item name="popupItemBackground">?android:selectableItemBackground</item>
+        <item name="photoItemForeground">?android:selectableItemBackground</item>
+        <item name="photoItemForegroundBorderless">?android:selectableItemBackground</item>
+
+        <item name="colorPrimary">@color/theme_primary</item>
+        <item name="colorPrimaryDark">@color/theme_primary_dark</item>
+        <item name="colorAccent">@color/theme_primary</item>
+
+        <item name="android:textColorLink">@color/flat_button_text</item>
+
+        <!--设置 window 的 ActionBar-->
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+
+
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_up</item>
+
+        <!--menu选择框的样式-->
+        <item name="android:popupMenuStyle">@style/Widget.IOSched.PopupMenu</item>
+
+        <item name="android:listPopupWindowStyle">@style/Widget.IOSched.PopupMenu</item>
+        <item name="android:dropDownListViewStyle">@style/Widget.IOSched.ListView.DropDown</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/TextAppearance.LargePopupMenu</item>
+
+        <item name="imageItemBackground">?android:selectableItemBackground</item>
+        <!--borderlessButtonStyle-->
+        <item name="android:borderlessButtonStyle">@style/Widget.AppCompat.Button.Borderless</item>
+    </style>
+
+    <!--修改所有的EditText的样式-->
+    <!-- Immediate parent theme to specify base values for custom attributes -->
+    <style name="Theme" parent="FrameworkRoot.Theme">
+        <!-- Only needed for pre-L -->
+        <item name="android:editTextBackground">@drawable/edit_text</item>
+        <item name="android:editTextStyle">@style/Widget.IOSched.EditText</item>
+    </style>
+
+
+    <style name="FrameworkRoot.Theme" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <style name="Widget.IOSched.PopupMenu" parent="Widget.AppCompat.Light.PopupMenu">
+        <item name="android:dropDownSelector">?popupItemBackground </item>
+    </style>
+
+    <style name="Widget.IOSched.ListView.DropDown" parent="Widget.AppCompat.Light.ListView.DropDown">
+        <item name="android:listSelector">?popupItemBackground</item>
+        <item name="android:divider">@null</item>
+        <item name="android:dividerHeight">0dp</item>
+    </style>
+
+
+    <style name="TextAppearance.LargePopupMenu" parent="TextAppearance.AppCompat.Widget.PopupMenu.Large">
+        <item name="android:textColor">@color/body_text_1</item>
+    </style>
+
+    <style name="Widget.IOSched.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text</item>
+    </style>
+
+</resources>

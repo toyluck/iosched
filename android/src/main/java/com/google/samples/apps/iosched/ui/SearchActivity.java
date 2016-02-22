@@ -77,6 +77,7 @@ public class SearchActivity extends BaseActivity implements
                 new int[]{R.id.search_result}, 0);
         mSearchResults.setAdapter(mResultsAdapter);
         mSearchResults.setOnItemClickListener(this);
+
         Toolbar toolbar = getActionBarToolbar();
 
         Drawable up = DrawableCompat.wrap(ContextCompat.getDrawable(this, R.drawable.ic_up));
@@ -248,6 +249,7 @@ public class SearchActivity extends BaseActivity implements
                                 android.R.interpolator.fast_out_slow_in))
                 .start();
     }
+
 
     private void searchFor(String query) {
         // ANALYTICS EVENT: Start a search on the Search activity
