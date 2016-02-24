@@ -197,7 +197,7 @@ public class ScheduleProvider extends ContentProvider {
                         String sortOrder) {
          final SQLiteDatabase db = mOpenHelper.getReadableDatabase();
 
-        String tagsFilter = uri.getQueryParameter(Sessions.QUERY_PARAMETER_TAG_FILTER);
+        String tagsFilter = uri.getQueryParameter( Sessions.QUERY_PARAMETER_TAG_FILTER);
         String categories = uri.getQueryParameter(Sessions.QUERY_PARAMETER_CATEGORIES);
 
         ScheduleUriEnum matchingUriEnum = mUriMatcher.matchUri(uri);
@@ -216,7 +216,7 @@ public class ScheduleProvider extends ContentProvider {
 
                 // If a special filter was specified, try to apply it.
                 if (!TextUtils.isEmpty(tagsFilter) && !TextUtils.isEmpty(categories)) {
-                    addTagsFilter(builder, tagsFilter, categories);
+                     addTagsFilter(builder, tagsFilter, categories);
                 }
 
                 boolean distinct = ScheduleContractHelper.isQueryDistinct(uri);
@@ -231,6 +231,7 @@ public class ScheduleProvider extends ContentProvider {
                 }
                 return cursor;
             }
+            //搜索 提示
             case SEARCH_SUGGEST: {
                 final SelectionBuilder builder = new SelectionBuilder();
 
@@ -250,6 +251,7 @@ public class ScheduleProvider extends ContentProvider {
                 final String limit = uri.getQueryParameter(SearchManager.SUGGEST_PARAMETER_LIMIT);
                 return builder.query(db, false, projection, SearchSuggest.DEFAULT_SORT, limit);
             }
+            //搜索 话题
             case SEARCH_TOPICS_SESSIONS: {
                 if (selectionArgs == null || selectionArgs.length == 0) {
                     return createMergedSearchCursor(null, null);

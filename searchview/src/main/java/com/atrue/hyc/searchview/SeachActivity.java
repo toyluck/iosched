@@ -151,7 +151,6 @@ public class SeachActivity extends AppCompatActivity {
     }
     private Toolbar getActionBarToolBar() {
 
-
         return (Toolbar) findViewById(R.id.toolbar_actionbar);
     }
 

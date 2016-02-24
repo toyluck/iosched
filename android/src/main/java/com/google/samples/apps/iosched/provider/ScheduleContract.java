@@ -571,7 +571,7 @@ public final class ScheduleContract {
             SyncColumns, BaseColumns {
 
         public static final String  QUERY_PARAMETER_TAG_FILTER = "filter";
-        public static final String QUERY_PARAMETER_CATEGORIES = "categories";
+         public static final String QUERY_PARAMETER_CATEGORIES = "categories";
 
         public static final Uri CONTENT_URI =
                 BASE_CONTENT_URI.buildUpon().appendPath(PATH_SESSIONS).build();
@@ -997,10 +997,14 @@ public final class ScheduleContract {
                 ScheduleContract.Sessions.SEARCH_SNIPPET
         };
 
+//        默认的搜索
         public static final String[] DEFAULT_PROJECTION = new String[] {
                 BaseColumns._ID,
+                //标记
                 SearchTopicSessionsColumns.TAG_OR_SESSION_ID,
+                //搜索的片段
                 SearchTopicSessionsColumns.SEARCH_SNIPPET,
+                //表示是否是Topic
                 SearchTopicSessionsColumns.IS_TOPIC_TAG,
         };
     }
