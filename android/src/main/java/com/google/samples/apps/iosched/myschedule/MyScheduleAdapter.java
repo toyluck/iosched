@@ -245,7 +245,7 @@ public class MyScheduleAdapter implements ListAdapter, AbsListView.RecyclerListe
             LOGE(TAG, "Invalid view position passed to MyScheduleAdapter: " + position);
             return view;
         }
-        final ScheduleItem item = mItems.get(position);
+         final ScheduleItem item = mItems.get(position);
         ScheduleItem nextItem = position < mItems.size() - 1 ? mItems.get(position + 1) : null;
 
         long now = UIUtils.getCurrentTime(view.getContext());

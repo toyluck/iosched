@@ -27,6 +27,7 @@ public class ScheduleProviderUriMatcher {
         for (int i = 0; i < uris.length; i++) {
             _uriMatcher.addURI(authority, uris[i]._path, uris[i]._code);
         }
+        buildEnumsMap();
     }
 
     private void buildEnumsMap() {
@@ -39,7 +40,11 @@ public class ScheduleProviderUriMatcher {
 
     public ScheduleUriEnum matchUri(Uri uri) {
         int code = _uriMatcher.match(uri);
-        return  matchCode(code);
+        try {
+            return matchCode(code);
+        } catch (UnsupportedOperationException e){
+            throw new UnsupportedOperationException("Unknown uri " + uri);
+        }
     }
 
     public ScheduleUriEnum matchCode(int code) {

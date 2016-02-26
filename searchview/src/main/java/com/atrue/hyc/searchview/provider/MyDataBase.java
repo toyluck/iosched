@@ -30,12 +30,13 @@ public class MyDataBase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE" + Tables.CONTACTS + " (" +
+        db.execSQL("CREATE TABLE " + Tables.CONTACTS + " (" +
                 BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                ContactColmns.CONTACT_ID + "TEXT NOT NULL," +
-                ContactColmns.CONTACT_NAME + "TEXT NOT NULL," +
-                ContactColmns.CONTACT_NUMBER+"TEXT NOT NULL" +
-                "UNIQUE ("+ContactColmns.CONTACT_ID+") ON CONFLICT REPLACE");
+                ContactColmns.CONTACT_NAME +"TEXT NOT NULL,"+
+                ContactColmns.CONTACT_NUMBER+ "TEXT NOT NULL,"+
+                "UNIQUE ("+ContactColmns.CONTACT_NUMBER+") ON CONFLICT REPLACE"
+                +" )"
+        );
 
     }
 

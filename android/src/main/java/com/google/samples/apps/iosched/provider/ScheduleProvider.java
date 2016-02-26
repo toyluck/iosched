@@ -231,11 +231,12 @@ public class ScheduleProvider extends ContentProvider {
                 }
                 return cursor;
             }
-            //搜索 提示
+            //搜索 建议
             case SEARCH_SUGGEST: {
                 final SelectionBuilder builder = new SelectionBuilder();
 
                 // Adjust incoming query to become SQL text match.
+                // 调整 其成为SQL 查询语句
                 selectionArgs[0] = selectionArgs[0] + "%";
                 builder.table(Tables.SEARCH_SUGGEST);
                 builder.where(selection, selectionArgs);

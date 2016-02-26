@@ -5,6 +5,7 @@ import android.provider.BaseColumns;
 
 /**
  * Created by HYC on 2016/2/24.
+ *
  */
 public class ScheduleConract {
     public static final String CONTENT_TYPE_APP_BASE="hyc.";
@@ -15,7 +16,6 @@ public class ScheduleConract {
     interface ContactColmns{
         String CONTACT_NAME="contact_name";
         String CONTACT_ID="contact_id";
-
         String CONTACT_NUMBER="contact_number";
 
     }
@@ -32,7 +32,10 @@ public class ScheduleConract {
             return null;
         }
     }
+
+
     public static class Contacts implements ContactColmns,BaseColumns{
+
         public static final Uri CONTENT_URI=BASE_CONTENT_URI.buildUpon().appendPath(PATH_CONTACTS).build();
 
         /**
@@ -41,6 +44,9 @@ public class ScheduleConract {
         public static Uri buildContactUri(String contactId){
             return CONTENT_URI.buildUpon().appendPath(contactId).build();
         }
+
+
+
 
         public static  String getContactId(Uri uri){
             return uri.getPathSegments().get(1);

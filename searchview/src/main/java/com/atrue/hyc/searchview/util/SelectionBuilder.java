@@ -41,6 +41,11 @@ import static com.atrue.hyc.searchview.util.LogUtils.makeLogTag;
  * Helper for building selection clauses for {@link SQLiteDatabase}. Each
  * appended clause is combined using {@code AND}. This class is <em>not</em>
  * thread safe.
+ * <p/>
+ * 帮助 生成 数据库中的 where 的约束条件. 每个附加条款都使用AND 作为连接词
+ * .
+ * 本方法 线程不安全!
+ *
  */
 public class SelectionBuilder {
     private static final String TAG = makeLogTag(SelectionBuilder.class);
@@ -54,6 +59,8 @@ public class SelectionBuilder {
 
     /**
      * Reset any internal state, allowing this builder to be recycled.
+     * <p/>
+     * 重置所有的 内部 声明变量. 使本方法可复用
      */
     public SelectionBuilder reset() {
         mTable = null;

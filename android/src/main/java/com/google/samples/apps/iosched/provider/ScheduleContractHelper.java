@@ -40,6 +40,7 @@ public class ScheduleContractHelper {
                 .build();
     }
 
+    //
     public static boolean isQueryDistinct(Uri uri){
         return !TextUtils.isEmpty(uri.getQueryParameter(QUERY_PARAMETER_DISTINCT));
     }
