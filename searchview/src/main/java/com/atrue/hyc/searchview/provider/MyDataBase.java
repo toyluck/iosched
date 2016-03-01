@@ -26,17 +26,21 @@ public class MyDataBase extends SQLiteOpenHelper {
     public MyDataBase(Context context) {
         super(context, DATABASE_NAME, null, GOOGLER_VERSION);
         _context = context;
+        
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + Tables.CONTACTS + " (" +
-                BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                ContactColmns.CONTACT_NAME +"TEXT NOT NULL,"+
-                ContactColmns.CONTACT_NUMBER+ "TEXT NOT NULL,"+
-                "UNIQUE ("+ContactColmns.CONTACT_NUMBER+") ON CONFLICT REPLACE"
-                +" )"
-        );
+
+
+        String sql = "CREATE TABLE " + Tables.CONTACTS + " (" +
+                BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                ContactColmns.CONTACT_NAME + " TEXT  , " +
+                ContactColmns.CONTACT_NUMBER + " TEXT  , " +
+                "UNIQUE (" + ContactColmns.CONTACT_NUMBER + " ) ON CONFLICT REPLACE"
+                + " )";
+        db.execSQL(sql);
+
 
     }
 

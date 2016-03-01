@@ -14,6 +14,7 @@ import com.atrue.hyc.searchview.provider.ScheduleConract.Contacts;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
+import java.util.Set;
 
 /**
  * Created by HYC on 2016/2/24.
@@ -41,7 +42,7 @@ public class ScheduleProvider extends ContentProvider {
     @Nullable
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-        SQLiteDatabase db = _OpenHelper.getReadableDatabase();
+        SQLiteDatabase db = _OpenHelper.getWritableDatabase();
         String tagsFilter = uri.getQueryParameter(ScheduleConract.Sessions.QUERY_PARAMETER_TAG_FILTER);
         String categories = uri.getQueryParameter(ScheduleConract.Sessions.QUERY_PARAMETER_CATEGORIER);
 
@@ -107,7 +108,7 @@ public class ScheduleProvider extends ContentProvider {
         SQLiteDatabase db = _OpenHelper.getWritableDatabase();
         ScheduleUriEnum matchUriEnum = _uriMatcher.matchUri(uri);
         if (matchUriEnum._table!=null){
-            db.insertOrThrow(matchUriEnum._table,null,contentValues);
+            db.insertOrThrow(matchUriEnum._path,null,contentValues);
             notifyChange(uri);
         }
 

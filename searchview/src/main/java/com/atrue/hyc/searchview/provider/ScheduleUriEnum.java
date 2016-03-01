@@ -9,8 +9,8 @@ package com.atrue.hyc.searchview.provider;
  * 所有 table 表中的 标准内容Uri 的枚举
  */
 public enum ScheduleUriEnum {
-    CONTACT(100, "contact", ScheduleConract.ContactColmns.CONTACT_ID, false, ScheduleConract.ContactColmns.CONTACT_NUMBER),
-    CONTACT_ID(101, "contact/*", ScheduleConract.ContactColmns.CONTACT_ID, true, null);
+    CONTACT(100, "contacts", ScheduleConract.ContactColmns.CONTACT_ID, false, MyDataBase.Tables.CONTACTS),
+    CONTACT_ID(101, "contacts/*", ScheduleConract.ContactColmns.CONTACT_ID, true, null);
     public int _code;
     public String _path;
     public String _contentType;
