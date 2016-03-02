@@ -108,7 +108,7 @@ public class ScheduleProvider extends ContentProvider {
         SQLiteDatabase db = _OpenHelper.getWritableDatabase();
         ScheduleUriEnum matchUriEnum = _uriMatcher.matchUri(uri);
         if (matchUriEnum._table!=null){
-            db.insertOrThrow(matchUriEnum._path,null,contentValues);
+            db.insert(matchUriEnum._path,null,contentValues);
             notifyChange(uri);
         }
 

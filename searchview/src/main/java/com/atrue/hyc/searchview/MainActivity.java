@@ -11,6 +11,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.transition.Scene;
+import android.transition.TransitionManager;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -20,6 +23,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.Manifest;
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity
     List<Pp> _pps = new ArrayList<>();
     public final int MY_PERMISSIONS_REQUEST_READ_CONTACTS=0x001;
     public final int MY_PERMISSIONS_REQUEST_STORAGE_GROUP=0x002;
+    private Scene scene;
 
     class Pp {
         String number;
@@ -50,7 +55,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        View rootView = LayoutInflater.from(this).inflate(R.layout.activity_main, null);
+        setContentView(rootView);
+        ViewGroup rootContainer= (ViewGroup) rootView;
+        scene = Scene.getSceneForLayout(rootContainer, R.layout.activity_main2, getApplicationContext());
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         _listView = (ListView) findViewById(R.id.list);
 
@@ -196,11 +206,12 @@ public class MainActivity extends AppCompatActivity
             //检查Permissions
             requestWriteStorage();
             return;
+        }else {
+            insert2Sqlite();
         }
     }
 
     private void insert2Sqlite( ) {
-
         for (Pp pp : _pps) {
         MyDataBase.deleteDatabase(this);
         ContentValues contentValues=new ContentValues();
@@ -213,7 +224,7 @@ public class MainActivity extends AppCompatActivity
     @TargetApi(Build.VERSION_CODES.M)
     private void requestWriteStorage() {
 
-        if (ContextCompat.checkSelfPermission(this,Manifest.permission_group.STORAGE)!=PackageManager.PERMISSION_GRANTED){
+        if (ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE)!=PackageManager.PERMISSION_GRANTED){
             //未通过
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.WRITE_EXTERNAL_STORAGE)){
                 insert2Sqlite( );
@@ -225,8 +236,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    //页面跳转
     public void queryFromSqlite(View view) {
-
+        TransitionManager.go(scene);
     }
 
     @Override

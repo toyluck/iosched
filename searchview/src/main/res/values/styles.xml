@@ -18,7 +18,6 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
-
     <style name="SearchViewTheme" parent="ThemeOverlay.AppCompat.ActionBar">
         <item name="android:textColorPrimary">@color/app_body_text_1</item>
         <item name="colorControlNormal">@color/app_body_text_2</item>
@@ -32,7 +31,8 @@
         <!--设置 window 背景半透明 -->
         <item name="android:windowIsTranslucent">true</item>
 
-        <item name="autoCompleteTextViewStyle">@style/Widget.IOSched.Search.AutoCompleteTextView</item>
+        <item name="autoCompleteTextViewStyle">@style/Widget.IOSched.Search.AutoCompleteTextView
+        </item>
         <item name="searchViewStyle">@style/Widget.IOSched.SearchView</item>
         <item name="colorControlNormal">@color/app_body_text_2</item>
         <item name="colorControlActivated">@color/theme_accent_1</item>
@@ -89,7 +89,8 @@
 
         <item name="android:listPopupWindowStyle">@style/Widget.IOSched.PopupMenu</item>
         <item name="android:dropDownListViewStyle">@style/Widget.IOSched.ListView.DropDown</item>
-        <item name="android:textAppearanceLargePopupMenu">@style/TextAppearance.LargePopupMenu</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/TextAppearance.LargePopupMenu
+        </item>
 
         <item name="imageItemBackground">?android:selectableItemBackground</item>
         <!--borderlessButtonStyle-->
@@ -108,7 +109,7 @@
     <style name="FrameworkRoot.Theme" parent="Theme.AppCompat.Light.NoActionBar" />
 
     <style name="Widget.IOSched.PopupMenu" parent="Widget.AppCompat.Light.PopupMenu">
-        <item name="android:dropDownSelector">?popupItemBackground </item>
+        <item name="android:dropDownSelector">?popupItemBackground</item>
     </style>
 
     <style name="Widget.IOSched.ListView.DropDown" parent="Widget.AppCompat.Light.ListView.DropDown">

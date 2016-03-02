@@ -36,9 +36,9 @@ public class MyDataBase extends SQLiteOpenHelper {
         String sql = "CREATE TABLE " + Tables.CONTACTS + " (" +
                 BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 ContactColmns.CONTACT_NAME + " TEXT  , " +
-                ContactColmns.CONTACT_NUMBER + " TEXT  , " +
-                "UNIQUE (" + ContactColmns.CONTACT_NUMBER + " ) ON CONFLICT REPLACE"
-                + " )";
+                ContactColmns.CONTACT_NUMBER + " TEXT,  " +
+                "UNIQUE (" + ContactColmns.CONTACT_NUMBER + " ) ON CONFLICT REPLACE"+
+                 " )";
         db.execSQL(sql);
 
 
