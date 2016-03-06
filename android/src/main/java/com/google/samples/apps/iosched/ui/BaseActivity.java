@@ -580,7 +580,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
         trySetupSwipeRefresh();
         updateSwipeRefreshProgressBarTop();
 
-        View mainContent = findViewById(R.id.main_content);
+         View mainContent = findViewById(R.id.main_content);
         if (mainContent != null) {
             mainContent.setAlpha(0);
             mainContent.animate().alpha(1).setDuration(MAIN_CONTENT_FADEIN_DURATION);
@@ -1481,7 +1481,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
 
     protected void onActionBarAutoShowOrHide(boolean shown) {
         if (mStatusBarColorAnimator != null) {
-            mStatusBarColorAnimator.cancel();
+             mStatusBarColorAnimator.cancel();
         }
         mStatusBarColorAnimator = ObjectAnimator.ofInt(
                 (mDrawerLayout != null) ? mDrawerLayout : mLUtils,

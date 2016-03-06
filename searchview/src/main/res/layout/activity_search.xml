@@ -53,12 +53,13 @@
             <ListView
                 android:id="@+id/search_results"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:paddingTop="@dimen/spacing_normal"
                 android:paddingBottom="@dimen/spacing_normal"
+                android:background="@color/body_text_3"
                 android:clipToPadding="false"
                 android:divider="@null"
-                android:visibility="gone" />
+                />
 
         </LinearLayout>
 

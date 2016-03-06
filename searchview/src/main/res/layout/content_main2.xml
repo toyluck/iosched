@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:iosched="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -12,11 +13,30 @@
     tools:context="com.atrue.hyc.searchview.Main2Activity"
     android:id="@+id/col"
     tools:showIn="@layout/activity_main2">
-    <Button
-        android:layout_width="wrap_content"
-        android:text="跳转页面"
-        android:onClick="queryFromSqlite"
-        android:id="@+id/goButton"
-        android:layout_centerInParent="true"
-        android:layout_height="wrap_content"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/welcome_content_padding_top"
+        android:paddingBottom="@dimen/padding_normal"
+        android:layout_marginBottom="?actionBarSize"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/welcome_content"
+            android:layout_width="@dimen/welcome_content_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/padding_normal"
+            android:layout_marginEnd="@dimen/padding_normal"
+            android:paddingTop="@dimen/spacing_normal"
+            iosched:cardBackgroundColor="@color/app_white"
+            iosched:cardCornerRadius="@dimen/card_corner_radius"
+            iosched:cardElevation="@dimen/card_elevation"
+            iosched:cardPreventCornerOverlap="false" />
+
+    </ScrollView>
+
 </RelativeLayout>

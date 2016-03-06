@@ -91,8 +91,9 @@ public class SettingsActivity extends BaseActivity {
 
         private void setContentTopClearance(int clearance) {
             if (getView() != null) {
+
                 getView().setPadding(getView().getPaddingLeft(), clearance,
-                        getView().getPaddingRight(), getView().getPaddingBottom());
+                getView().getPaddingRight(), getView().getPaddingBottom());
             }
         }
 

@@ -41,6 +41,7 @@ public class ScrimInsetsScrollView extends ScrollView {
     public ScrimInsetsScrollView(Context context) {
         super(context);
         init(context, null, 0);
+
     }
 
     public ScrimInsetsScrollView(Context context, AttributeSet attrs) {
@@ -114,7 +115,7 @@ public class ScrimInsetsScrollView extends ScrollView {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (mInsetForeground != null) {
-            mInsetForeground.setCallback(this);
+             mInsetForeground.setCallback(this);
         }
     }
 

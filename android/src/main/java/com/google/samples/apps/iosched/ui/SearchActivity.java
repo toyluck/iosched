@@ -76,6 +76,7 @@ public class SearchActivity extends BaseActivity implements
                 R.layout.list_item_search_result, null,
                 new String[]{ScheduleContract.SearchTopicSessionsColumns.SEARCH_SNIPPET},
                 new int[]{R.id.search_result}, 0);
+
         mSearchResults.setAdapter(mResultsAdapter);
         mSearchResults.setOnItemClickListener(this);
 

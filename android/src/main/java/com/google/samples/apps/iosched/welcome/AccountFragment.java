@@ -51,6 +51,7 @@ public class AccountFragment extends WelcomeFragment
     @Override
     public boolean shouldDisplay(Context context) {
         Account account = AccountUtils.getActiveAccount(context);
+        System.out.println("你在看我吗？");
         if (account == null) {
             return true;
         }

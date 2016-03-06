@@ -122,7 +122,6 @@ public class ConferenceDataHandler {
     public void applyConferenceData(String[] dataBodies, String dataTimestamp,
             boolean downloadsAllowed) throws IOException {
         LOGD(TAG, "Applying data from " + dataBodies.length + " files, timestamp " + dataTimestamp);
-
         // create handlers for each data type
         mHandlerForKey.put(DATA_KEY_ROOMS, mRoomsHandler = new RoomsHandler(mContext));
         mHandlerForKey.put(DATA_KEY_BLOCKS, mBlocksHandler = new BlocksHandler(mContext));
@@ -159,7 +158,6 @@ public class ConferenceDataHandler {
         // download or process local map tile overlay files (SVG files)
         LOGD(TAG, "Processing map overlay files");
         processMapOverlayFiles(mMapPropertyHandler.getTileOverlays(), downloadsAllowed);
-
         // finally, push the changes into the Content Provider
         LOGD(TAG, "Applying " + batch.size() + " content provider operations.");
         try {

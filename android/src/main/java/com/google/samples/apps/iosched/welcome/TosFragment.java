@@ -52,7 +52,7 @@ public class TosFragment extends WelcomeFragment implements WelcomeActivity.Welc
     }
 
     @Override
-    protected View.OnClickListener getNegativeListener() {
+    protected View.OnClickListener getNegativeListener () {
         return new WelcomeFragmentOnClickListener(mActivity) {
             @Override
             public void onClick(View v) {

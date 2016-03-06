@@ -5,7 +5,7 @@ import android.provider.BaseColumns;
 
 /**
  * Created by HYC on 2016/2/24.
- *
+ * 所有 sqlite 数据库的 表名  和
  */
 public class ScheduleConract {
     public static final String CONTENT_TYPE_APP_BASE="hyc.";

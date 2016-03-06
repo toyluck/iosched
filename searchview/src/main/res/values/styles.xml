@@ -115,7 +115,7 @@
     <style name="Widget.IOSched.ListView.DropDown" parent="Widget.AppCompat.Light.ListView.DropDown">
         <item name="android:listSelector">?popupItemBackground</item>
         <item name="android:divider">@null</item>
-        <item name="android:dividerHeight">0dp</item>
+<item name="android:dividerHeight">0dp</item>
     </style>
 
 
@@ -127,4 +127,36 @@
         <item name="android:background">@drawable/edit_text</item>
     </style>
 
+
+    <style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!-- The layout for the search view. Be careful. -->
+        <!--<item name="layout">...</item>-->
+        <!-- Background for the search query section (e.g. EditText) -->
+        <item name="queryBackground">@android:color/black</item>
+        <!-- Background for the actions section (e.g. voice, submit) -->
+        <item name="submitBackground">@android:drawable/ic_menu_add</item>
+        <!-- Close button icon -->
+        <item name="closeIcon">@android:drawable/ic_menu_close_clear_cancel</item>
+        <!-- Search button icon -->
+        <item name="searchIcon">@android:drawable/arrow_up_float</item>
+        <!-- Go/commit button icon -->
+        <item name="goIcon">@android:drawable/ic_menu_send</item>
+        <!-- Voice search button icon -->
+        <!--<item name="voiceIcon">...</item>-->
+        <!-- Commit icon shown in the query suggestion row -->
+        <item name="commitIcon">@android:drawable/stat_notify_error</item>
+        <!-- Layout for query suggestion rows -->
+        <!--<item name="suggestionRowLayout">...</item>-->
+    </style>
+
+
+    <style name="TextAppearance.Body1" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">14sp</item> <!-- bug in AppCompat, can remove this when it's fixed -->
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+
+    <style name="Body1Text">
+        <item name="android:textAppearance">@style/TextAppearance.Body1</item>
+        <item name="android:lineSpacingMultiplier">@dimen/body_1_spacing</item>
+    </style>
 </resources>

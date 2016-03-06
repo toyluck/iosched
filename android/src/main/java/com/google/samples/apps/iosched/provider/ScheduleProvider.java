@@ -257,10 +257,11 @@ public class ScheduleProvider extends ContentProvider {
                 if (selectionArgs == null || selectionArgs.length == 0) {
                     return createMergedSearchCursor(null, null);
                 }
+
                 String selectionArg = selectionArgs[0] == null ? "" : selectionArgs[0];
                 // First we query the Tags table to find any tags that match the given query
                 Cursor tags = query(Tags.CONTENT_URI, SearchTopicsSessions.TOPIC_TAG_PROJECTION,
-                        SearchTopicsSessions.TOPIC_TAG_SELECTION,
+                         SearchTopicsSessions.TOPIC_TAG_SELECTION,
                         new String[] {Config.Tags.CATEGORY_TOPIC, selectionArg + "%"},
                         Tags.TAG_ORDER_BY_CATEGORY);
                 // Then we query the sessions_search table and get a list of sessions that match
