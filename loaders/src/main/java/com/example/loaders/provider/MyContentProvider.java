@@ -41,14 +41,15 @@ public class MyContentProvider extends ContentProvider {
         Cursor cursor=null;
         switch (uriMatcher.match(uri)) {
             case CONTACTS_DIR:
-                cursor=db.query(MyDataBase.Tables.CONTACTS,projection,selection,selectionArgs,null,null,sortOrder);
-                break;
+//                cursor=db.query(MyDataBase.Tables.CONTACTS,projection,selection,null,null,null,sortOrder);
             case CONTACTS_ITEM:
                 String selectionArg = selectionArgs[0] == null ? "" : selectionArgs[0];
-                cursor= query(MyContract.Tags.CONTENT_URI, MyContract.SearchTopicsSessions.CONTACTS_PROJECTION,
-                        MyContract.SearchTopicsSessions.TOPIC_TAG_SELECTION,
-                        new String[] {  selectionArg + "%"},
-                       null);
+//                cursor= db.query(MyDataBase.Tables.CONTACTS, MyContract.SearchTopicsSessions.CONTACTS_PROJECTION,
+//                        MyContract.SearchTopicsSessions.TOPIC_TAG_SELECTION,
+//                        new String[] {  selectionArg + "%"},
+//                       null,null);
+                cursor=db.query(MyDataBase.Tables.CONTACTS,MyContract.SearchTopicsSessions.CONTACTS_PROJECTION,
+ MyContract.SearchTopicsSessions.TOPIC_TAG_SELECTION,new String[]{selectionArg},null  ,null,sortOrder );
         }
         return cursor;
     }

@@ -188,9 +188,10 @@ public class SearchActivity extends AppCompatActivity implements LoaderManager.L
         String select = "((" + Contacts.DISPLAY_NAME + " NOTNULL) AND ("
                 + Contacts.HAS_PHONE_NUMBER + "=1) AND ("
                 + Contacts.DISPLAY_NAME + " != '' ))";
+        String sel="SELECT * FROM contacts where contact_name like  \"你%\";";
+//        return new CursorLoader(this,uri,CONTACTS_PROJECTION, MyContract.SearchTopicsSessions.TOPIC_TAG_SELECTION,new String[]{query}, "contact_name" + " COLLATE LOCALIZED ASC");
 
-        return new CursorLoader(this,uri,CONTACTS_PROJECTION, MyContract.SearchTopicsSessions.TOPIC_TAG_SELECTION,new String[]{query}, "contact_name" + " COLLATE LOCALIZED ASC");
-//        return new CursorLoader(this,baseUri,CONTACTS_PROJECTION, null,null, "contact_name" + " COLLATE LOCALIZED ASC");
+        return new CursorLoader(this,uri,CONTACTS_PROJECTION, null,new String[]{query+"%"},null);
     }
 
     @Override

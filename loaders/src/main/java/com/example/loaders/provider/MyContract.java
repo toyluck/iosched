@@ -51,6 +51,6 @@ public class MyContract {
         };
 
         public static final String TOPIC_TAG_SELECTION =
-                "contact_name " + " like ?";
+                "contact_number " + " like ?";
     }
 }

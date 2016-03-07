@@ -264,6 +264,7 @@ public class ScheduleProvider extends ContentProvider {
                          SearchTopicsSessions.TOPIC_TAG_SELECTION,
                         new String[] {Config.Tags.CATEGORY_TOPIC, selectionArg + "%"},
                         Tags.TAG_ORDER_BY_CATEGORY);
+
                 // Then we query the sessions_search table and get a list of sessions that match
                 // the given keywords.
                 Cursor search = null;
